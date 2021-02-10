@@ -27,6 +27,7 @@ def pop():
 	#print("I'm")
 	if dict['S'] == 'жду' :
 		#print('Ты не успел!!!1')
+		bot.send_message(ids, 'You Lose')
 		dict['S'] = 'есть'
 
 # while True:
@@ -41,8 +42,8 @@ def my_timer(print_interval):
 	data = threading.local()
 	data.counter = 1
 
-	schedule.every().day.at("22:00").do(job)
-	schedule.every().day.at("23:59").do(pop)
+	schedule.every().day.at("07:30").do(job)
+	schedule.every().day.at("07:59").do(pop)
 
 	while True:
 		schedule.run_pending()
