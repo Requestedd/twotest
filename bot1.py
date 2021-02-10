@@ -41,9 +41,9 @@ def my_timer(print_interval):
 	
 	data = threading.local()
 	data.counter = 1
-
-	schedule.every().day.at("07:35").do(job)
-	schedule.every().day.at("07:40").do(pop)
+	schedule.every(10).minutes.do(job)
+	schedule.every().day.at("07:40").do(job)
+	schedule.every().day.at("07:45").do(pop)
 
 	while True:
 		schedule.run_pending()
